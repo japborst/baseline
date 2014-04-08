@@ -1,0 +1,18 @@
+@mixin rwd-img($name,$ext:jpg,$root: 'img',$optn: (s,m,l,xl)){
+	background-image: url('/#{$root}/#{$name}-#{nth($optn,1)}.#{$ext}');
+	@if (length($optn) >= 2){
+		@include mq($tab){
+			background-image: url('/#{$root}/#{$name}-#{nth($optn,2)}.#{$ext}');
+		}
+	}
+	@if (length($optn) >= 3){
+		@include mq($full){
+			background-image: url('/#{$root}/#{$name}-#{nth($optn,3)}.#{$ext}');
+		}
+	}
+	@if (length($optn) >= 4){
+		@include mq($hd){
+			background-image: url('/#{$root}/#{$name}-#{nth($optn,4)}.#{$ext}');
+		}
+	}
+}

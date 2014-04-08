@@ -1,0 +1,44 @@
+.rwd-img{
+	display: block;
+	overflow: hidden;
+	span{
+		display: block;
+	}
+	img{
+		width: 100%;
+	}
+	.intro &{
+		@include mq($desk){
+			height: 37em;
+			img{
+				position: fixed;
+			}
+		}
+	}
+	.intro.small &{
+		@include mq($desk){
+			height: 21.88em;
+		}
+		@include mq($hd){
+			height: 21.7em;
+		}
+	}
+	.intro &,.break &,.follow &{
+		img{
+			width: em($tab);
+			left: 50%;
+			transform: translate3d(-50%,0,0);
+			transition: transform 0.1s linear;
+			@include mq($tab){
+				width: em($desk);
+			}
+			@include mq($desk){
+				width: em($hd);
+			}
+			@include mq($hd){
+				width: 100%;
+			}
+		}
+	}
+	
+}

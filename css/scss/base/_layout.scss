@@ -1,0 +1,46 @@
+*{
+	position: relative;
+	box-sizing: border-box;
+	&::before,&::after{
+		position: relative;
+		box-sizing: border-box;
+	}
+}
+html{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 100%;
+}
+main{
+	background: white;
+}
+section{
+	@include grid(4);
+	&.full{
+		padding: 0;
+	}
+}
+footer{
+	@include grid(4);
+}
+ul,ol{
+	margin: 0;
+	padding: 0;
+}
+img{
+	vertical-align: middle;
+}
+.max{
+	@extend %clearfix;
+	max-width: em($wide);
+	margin-left: auto;
+	margin-right: auto;
+}

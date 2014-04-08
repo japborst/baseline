@@ -1,0 +1,67 @@
+@mixin grid($col,
+						$context: $default-context,
+						$lg: 			$default-lg,
+						$rg: 			$default-rg,
+						$gt: 		$default-gt,
+						$optn:  	''){
+	width: $col/$context*100%;
+	#{$gt}-left: $lg;
+	#{$gt}-right: $rg;
+	$float: left;
+	@if ($optn == 'right'){
+		$float: right;
+	}
+	@if ($col < $context and $optn != 'no-float'){
+		float: $float;
+		clear: none;
+		@if ($optn != 'no-clear'){
+			&:nth-of-type(#{$context/$col}n+1){
+				clear: left;
+			}
+		}
+	}
+	@if ($col == $context){
+		clear: left;
+	}
+	@if ($optn == 'center'){
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		clear: left;
+	}
+}
+@mixin span($col, 
+						$context: $default-context,
+						$optn: 		''){
+	width: $col/$context*100%;
+	@if ($optn == 'center'){
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@mixin spacer($col,
+							$context:$default-context,
+							$dir:'left'){
+	$shift: $col/$context*100%;
+	@if($dir == 'right'){
+		margin-right: $shift;
+	}
+	@else{
+		margin-left: $shift;
+	}
+}
+@mixin grid-padding($factor: 1, $optn: ''){
+	$factor-lg: $default-lg/$factor;
+	$factor-rg: $default-rg/$factor;
+	@if ($optn == 'compensate'){
+		@include rem(margin-left,-$factor-lg);
+		@include rem(margin-right, -$factor-rg);
+	}
+	@include rem(padding-left, $factor-lg);
+	@include rem(padding-right, $factor-rg);
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	float: none !important;
+}

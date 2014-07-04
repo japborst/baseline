@@ -1,4 +1,5 @@
 .masonry{
+	@extend %clearfix;
 	&[data-columns]::before{
 		content: '3';
 	}

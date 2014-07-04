@@ -2,7 +2,7 @@
 						$context: $default-context,
 						$lg: 			$default-lg,
 						$rg: 			$default-rg,
-						$gt: 		$default-gt,
+						$gt: 			$default-gt,
 						$optn:  	''){
 	width: $col/$context*100%;
 	#{$gt}-left: $lg;

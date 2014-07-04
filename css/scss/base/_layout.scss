@@ -18,9 +18,15 @@ body{
 	margin: 0 auto;
 	padding: 0;
 	font-size: 100%;
+	overflow-x: hidden;
 }
 main{
+	display: block;
+	min-height: 100%;
+}
+.container{
 	background: white;
+	z-index: 2;
 }
 section{
 	@include grid(4);

@@ -29,13 +29,6 @@
     "password": null,
     "ignoreDir": "ignore",
     "customTodos": null,
-    "ftpSettings": {
-      "host": null,
-      "port": 21,
-      "username": null,
-      "password": null,
-      "path": null
-    },
     "autoPrefixer": {
         "active": true,
         "browsers": null
